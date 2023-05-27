@@ -6,7 +6,7 @@ export default function TopDownloadSection() {
   return (
     <section className="container mx-auto border p-6 rounded-md">
       <SectionHeader label="Top Download" />
-      <div className="py-4 grid grid-cols-5 gap-4">
+      <div className="py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {myArray.map((_, idx) => (
           <RingtoneCard key={idx} />
         ))}

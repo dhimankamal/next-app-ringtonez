@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="w-full">
         <Navbar />
-        <main>{children}</main>
+        <main className="pt-20">{children}</main>
 
         <Footer />
         <TailwindIndicator />

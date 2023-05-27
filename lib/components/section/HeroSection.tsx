@@ -2,7 +2,7 @@ import { CommonButton } from "../ui";
 
 export default function HeorSection() {
   return (
-    <section className="bg-white dark:bg-gray-900 pt-40 grid place-content-center">
+    <section className="bg-white dark:bg-gray-900 pt-20 grid place-content-center">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
           Discover the Perfect Ringtone for Every Mood and Moment

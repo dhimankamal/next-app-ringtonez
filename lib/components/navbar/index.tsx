@@ -15,13 +15,13 @@ const Navlinks = [
 
 export default function Navbar() {
   return (
-    <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600 ">
+    <nav className="backdrop-blur-xl bg-white/60  dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600 ">
       <div className="flex flex-wrap items-center justify-between mx-auto p-4 container">
-        <a href="https://flowbite.com/" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             Ringtonez
           </span>
-        </a>
+        </Link>
         <div className="flex">
           <button
             data-collapse-toggle="navbar-sticky"
