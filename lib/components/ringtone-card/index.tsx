@@ -18,7 +18,7 @@ export default function RingtoneCard({}: RingtoneCardProps) {
   }, [play]);
 
   return (
-    <div className="border p-4 transition-all duration-500 hover:bg-slate-100 rounded-md flex items-center gap-4">
+    <div className="border p-4 transition-all duration-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md flex items-center gap-4">
       <div className="cursor-pointer" onClick={() => setPlay(!play)}>
         {!play && <FaPlay size={32} />}
         {play && <FaPause size={32} />}

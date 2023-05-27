@@ -1,14 +1,46 @@
-import { FeaturedSection } from "@lib/components";
+import {
+  FeaturedSection,
+  TagComponent,
+  SectionHeader,
+  CommonButton,
+} from "@lib/components";
+import { FaDownload } from "react-icons/fa";
 
 type PageProps = { params: { slug: string } };
 
 export default function Page({ params }: PageProps) {
   return (
     <div className="container mx-auto p-8 space-y-4">
-    
       <section className="grid gap-4 grid-cols-5">
-        <div className="border p-4 col-span-3 hover:bg-slate-100 cursor-pointer bg-primary-10 transition-all duration-500">hello</div>
-        <div className="border p-4 col-span-2">2</div>
+        <div className="border p-4 col-span-3 rounded-md">
+          <SectionHeader label="Ringtone" />
+        </div>
+        <div className="border p-4 col-span-1 rounded-md">
+          <SectionHeader label="Download Now" />
+          <div className="py-2">
+            <CommonButton variant="light">
+              <div className="flex flex-row gap-2 items-center justify-center">
+                <span>Download Mp3</span>
+                <FaDownload />
+              </div>
+            </CommonButton>
+          </div>
+        </div>
+        <div className="border p-4 col-span-1">
+          <SectionHeader label="Tags" />
+          <TagComponent
+            tags={[
+              "Kamal",
+              "test",
+              "Kamal",
+              "test",
+              "Kamal",
+              "test",
+              "Kamal",
+              "test",
+            ]}
+          />
+        </div>
       </section>
       <section>
         <FeaturedSection />
