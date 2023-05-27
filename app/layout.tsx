@@ -1,3 +1,4 @@
+import { TailwindIndicator } from "@lib/components/TailwindIndicatior";
 import "./globals.css";
 import { Footer,Navbar } from "@lib/components";
 
@@ -16,7 +17,9 @@ export default function RootLayout({
       <body className="w-full">
         <Navbar />
         <main>{children}</main>
+
         <Footer />
+        <TailwindIndicator />
       </body>
     </html>
   );
