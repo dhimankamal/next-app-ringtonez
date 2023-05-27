@@ -1,9 +1,10 @@
 import { CommonButton, ProgressBar } from "@lib/components";
+import FeaturedSection from "@lib/components/section/FeaturedSection";
 
 export default function Home() {
   return (
-    <div>
-      <section className="bg-white dark:bg-gray-900 h-screen grid place-content-center">
+    <div className="space-y-8">
+      <section className="bg-white dark:bg-gray-900 pt-40 grid place-content-center">
         <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
           <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
           Discover the Perfect Ringtone for Every Mood and Moment
@@ -36,7 +37,7 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <ProgressBar label="Test" percentage={45} />
+        <FeaturedSection />
       </section>
     </div>
   );

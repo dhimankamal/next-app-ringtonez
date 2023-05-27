@@ -1,6 +1,6 @@
 import Navbar from "./navbar";
+import Footer from "./Footer";
 
-
-export { Navbar };
+export { Navbar,Footer };
 
 export * from "./ui"
