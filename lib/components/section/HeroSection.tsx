@@ -13,7 +13,7 @@ export default function HeorSection() {
         </p>
         <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
           <CommonButton>
-            Download Now
+            Search Now
             <svg
               aria-hidden="true"
               className="ml-2 -mr-1 w-5 h-5"
