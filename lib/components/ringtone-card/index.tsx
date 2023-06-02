@@ -1,11 +1,14 @@
 "use client";
 
+import { Post } from "@prisma/client";
 import { useEffect, useRef, useState } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
 
-type RingtoneCardProps = {};
+type RingtoneCardProps = {
+  post: Post;
+};
 
-export default function RingtoneCard({}: RingtoneCardProps) {
+export default function RingtoneCard({ post }: RingtoneCardProps) {
   const [play, setPlay] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -24,13 +27,10 @@ export default function RingtoneCard({}: RingtoneCardProps) {
         {play && <FaPause size={32} />}
       </button>
       <div className="cursor-pointer">
-        <h3 className="text-md font-medium">Ringtone name kamal</h3>
-        <p className="text-xs">Date - 12 may 2023 </p>
+        <h3 className="text-md font-medium">{post?.title}</h3>
+        <p className="text-xs">{post?.date}</p>
       </div>
-      <audio
-        ref={audioRef}
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-      />
+      <audio ref={audioRef} src={post?.url} />
     </div>
   );
 }

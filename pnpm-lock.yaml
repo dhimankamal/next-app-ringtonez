@@ -11,9 +11,12 @@ dependencies:
   '@heroicons/react':
     specifier: ^2.0.18
     version: 2.0.18(react@18.2.0)
+  '@opentelemetry/api':
+    specifier: ^1.4.1
+    version: 1.4.1
   '@prisma/client':
-    specifier: 4.14.1
-    version: 4.14.1(prisma@4.14.1)
+    specifier: 4.15.0
+    version: 4.15.0(prisma@4.15.0)
   '@types/node':
     specifier: 20.2.3
     version: 20.2.3
@@ -37,7 +40,7 @@ dependencies:
     version: 0.4.4(flowbite@1.6.5)(react-dom@18.2.0)(react@18.2.0)(tailwindcss@3.3.2)
   next:
     specifier: 13.4.4
-    version: 13.4.4(react-dom@18.2.0)(react@18.2.0)
+    version: 13.4.4(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
   postcss:
     specifier: 8.4.23
     version: 8.4.23
@@ -59,8 +62,8 @@ dependencies:
 
 devDependencies:
   prisma:
-    specifier: ^4.14.1
-    version: 4.14.1
+    specifier: ^4.15.0
+    version: 4.15.0
 
 packages:
 
@@ -167,8 +170,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@humanwhocodes/config-array@0.11.8:
-    resolution: {integrity: sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==}
+  /@humanwhocodes/config-array@0.11.10:
+    resolution: {integrity: sha512-KVVjQmNUepDVGXNuoRRdmmEjruj0KfiGSbS8LVc12LMsWDQzRXJ0qdhN8L8uUigKpfEHRhlaQFY0ib1tnUbNeQ==}
     engines: {node: '>=10.10.0'}
     dependencies:
       '@humanwhocodes/object-schema': 1.2.1
@@ -333,6 +336,11 @@ packages:
       fastq: 1.15.0
     dev: false
 
+  /@opentelemetry/api@1.4.1:
+    resolution: {integrity: sha512-O2yRJce1GOc6PAy3QxFM4NzFiWzvScDC1/5ihYBL6BUEVdq0XMWN01sppE+H6bBXbaFYipjwFLEWLg5PaSOThA==}
+    engines: {node: '>=8.0.0'}
+    dev: false
+
   /@pkgr/utils@2.4.1:
     resolution: {integrity: sha512-JOqwkgFEyi+OROIyq7l4Jy28h/WwhDnG/cPkXG2Z1iFbubB6jsHW1NDvmyOzTBxHr3yg68YGirmh1JUgMqa+9w==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
@@ -349,8 +357,8 @@ packages:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
     dev: false
 
-  /@prisma/client@4.14.1(prisma@4.14.1):
-    resolution: {integrity: sha512-TZIswkeX1ccsHG/eN2kICzg/csXll0osK3EHu1QKd8VJ3XLcXozbNELKkCNfsCUvKJAwPdDtFCzF+O+raIVldw==}
+  /@prisma/client@4.15.0(prisma@4.15.0):
+    resolution: {integrity: sha512-xnROvyABcGiwqRNdrObHVZkD9EjkJYHOmVdlKy1yGgI+XOzvMzJ4tRg3dz1pUlsyhKxXGCnjIQjWW+2ur+YXuw==}
     engines: {node: '>=14.17'}
     requiresBuild: true
     peerDependencies:
@@ -359,16 +367,16 @@ packages:
       prisma:
         optional: true
     dependencies:
-      '@prisma/engines-version': 4.14.0-67.d9a4c5988f480fa576d43970d5a23641aa77bc9c
-      prisma: 4.14.1
+      '@prisma/engines-version': 4.15.0-28.8fbc245156db7124f997f4cecdd8d1219e360944
+      prisma: 4.15.0
     dev: false
 
-  /@prisma/engines-version@4.14.0-67.d9a4c5988f480fa576d43970d5a23641aa77bc9c:
-    resolution: {integrity: sha512-3jum8/YSudeSN0zGW5qkpz+wAN2V/NYCQ+BPjvHYDfWatLWlQkqy99toX0GysDeaUoBIJg1vaz2yKqiA3CFcQw==}
+  /@prisma/engines-version@4.15.0-28.8fbc245156db7124f997f4cecdd8d1219e360944:
+    resolution: {integrity: sha512-sVOig4tjGxxlYaFcXgE71f/rtFhzyYrfyfNFUsxCIEJyVKU9rdOWIlIwQ2NQ7PntvGnn+x0XuFo4OC1jvPJKzg==}
     dev: false
 
-  /@prisma/engines@4.14.1:
-    resolution: {integrity: sha512-APqFddPVHYmWNKqc+5J5SqrLFfOghKOLZxobmguDUacxOwdEutLsbXPVhNnpFDmuQWQFbXmrTTPoRrrF6B1MWA==}
+  /@prisma/engines@4.15.0:
+    resolution: {integrity: sha512-FTaOCGs0LL0OW68juZlGxFtYviZa4xdQj/rQEdat2txw0s3Vu/saAPKjNVXfIgUsGXmQ72HPgNr6935/P8FNAA==}
     requiresBuild: true
 
   /@rushstack/eslint-patch@1.3.0:
@@ -671,7 +679,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001492
-      electron-to-chromium: 1.4.414
+      electron-to-chromium: 1.4.417
       node-releases: 2.0.12
       update-browserslist-db: 1.0.11(browserslist@4.21.7)
     dev: false
@@ -903,8 +911,8 @@ packages:
     resolution: {integrity: sha512-GJRqdiy2h+EXy6a8E6R+ubmqUM08BK0FWNq41k24fup6045biQ8NXxoXimiwegMQvFFV3t1emADdGNL1TlS61A==}
     dev: false
 
-  /electron-to-chromium@1.4.414:
-    resolution: {integrity: sha512-RRuCvP6ekngVh2SAJaOKT/hxqc9JAsK+Pe0hP5tGQIfonU2Zy9gMGdJ+mBdyl/vNucMG6gkXYtuM4H/1giws5w==}
+  /electron-to-chromium@1.4.417:
+    resolution: {integrity: sha512-8rY8HdCxuSVY8wku3i/eDac4g1b4cSbruzocenrqBlzqruAZYHjQCHIjC66dLR9DXhEHTojsC4EjhZ8KmzwXqA==}
     dev: false
 
   /emoji-regex@9.2.2:
@@ -1209,7 +1217,7 @@ packages:
       '@eslint-community/regexpp': 4.5.1
       '@eslint/eslintrc': 2.0.3
       '@eslint/js': 8.41.0
-      '@humanwhocodes/config-array': 0.11.8
+      '@humanwhocodes/config-array': 0.11.10
       '@humanwhocodes/module-importer': 1.0.1
       '@nodelib/fs.walk': 1.2.8
       ajv: 6.12.6
@@ -2009,7 +2017,7 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: false
 
-  /next@13.4.4(react-dom@18.2.0)(react@18.2.0):
+  /next@13.4.4(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-C5S0ysM0Ily9McL4Jb48nOQHT1BukOWI59uC3X/xCMlYIh9rJZCv7nzG92J6e1cOBqQbKovlpgvHWFmz4eKKEA==}
     engines: {node: '>=16.8.0'}
     hasBin: true
@@ -2028,6 +2036,7 @@ packages:
         optional: true
     dependencies:
       '@next/env': 13.4.4
+      '@opentelemetry/api': 1.4.1
       '@swc/helpers': 0.5.1
       busboy: 1.6.0
       caniuse-lite: 1.0.30001492
@@ -2345,13 +2354,13 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: false
 
-  /prisma@4.14.1:
-    resolution: {integrity: sha512-z6hxzTMYqT9SIKlzD08dhzsLUpxjFKKsLpp5/kBDnSqiOjtUyyl/dC5tzxLcOa3jkEHQ8+RpB/fE3w8bgNP51g==}
+  /prisma@4.15.0:
+    resolution: {integrity: sha512-iKZZpobPl48gTcSZVawLMQ3lEy6BnXwtoMj7hluoGFYu2kQ6F9LBuBrUyF95zRVnNo8/3KzLXJXJ5TEnLSJFiA==}
     engines: {node: '>=14.17'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@prisma/engines': 4.14.1
+      '@prisma/engines': 4.15.0
 
   /prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}

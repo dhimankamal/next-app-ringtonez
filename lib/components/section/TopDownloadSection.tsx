@@ -1,16 +1,23 @@
 import RingtoneCard from "../ringtone-card";
-import SectionHeader from "../ui/SectionHeader";
+import { prisma } from "@/lib/db";
 
-export default function TopDownloadSection() {
-  const myArray = Array.from({ length: 5 }, (_, index) => index);
+export const revalidate = 10;
+
+async function getPosts() {
+  try {
+    return await prisma.post.findMany();
+  } catch (error) {
+    throw error;
+  }
+}
+
+export default async function TopDownloadSection() {
+  const posts = await getPosts();
   return (
-    <section className="container mx-auto border p-6 rounded-md">
-      <SectionHeader label="Top Download" />
-      <div className="py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-        {myArray.map((_, idx) => (
-          <RingtoneCard key={idx} />
-        ))}
-      </div>
-    </section>
+    <div className="py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+      {posts.map(post => (
+        <RingtoneCard key={post.id} post={post} />
+      ))}
+    </div>
   );
 }

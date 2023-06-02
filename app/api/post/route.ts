@@ -3,7 +3,7 @@ import { WordpressPostResponse } from "./types";
 import { prisma } from "@/lib/db";
 
 const baseUrl = process.env.BACKEND_URL;
-export const runtime = 'edge'
+
 const getPostData = async (page: number) => {
   try {
     const res = await fetch(`${baseUrl}posts?per_page=10&page=${page}`, {
