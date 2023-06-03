@@ -1,9 +1,13 @@
 "use client";
 
 import { Post } from "@prisma/client";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
+
+dayjs.extend(relativeTime);
 
 type RingtoneCardProps = {
   post: Post;
