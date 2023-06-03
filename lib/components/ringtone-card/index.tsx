@@ -1,6 +1,7 @@
 "use client";
 
 import { Post } from "@prisma/client";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
 
@@ -26,10 +27,10 @@ export default function RingtoneCard({ post }: RingtoneCardProps) {
         {!play && <FaPlay size={32} />}
         {play && <FaPause size={32} />}
       </button>
-      <div className="cursor-pointer">
+      <Link href={post.slug} className="cursor-pointer">
         <h3 className="text-md font-medium">{post?.title}</h3>
         <p className="text-xs">{post?.date}</p>
-      </div>
+      </Link>
       <audio ref={audioRef} src={post?.url} />
     </div>
   );

@@ -1,13 +1,16 @@
 "use client";
 
-import { DOMAttributes, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaPause, FaPlay } from "react-icons/fa";
 import { ProgressBar } from "../ui";
 
-export default function SingleRingtone() {
+type SingleRingtoneProps = {
+  url: string;
+};
+
+export default function SingleRingtone({ url }: SingleRingtoneProps) {
   const [play, setPlay] = useState(false);
   const [percentage, setPercentage] = useState(0);
-  //   const [audioDuration, setAudioDuration] = useState(0);
 
   const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -18,13 +21,6 @@ export default function SingleRingtone() {
     const percentage = (currentTime / duration) * 100;
     setPercentage(percentage);
   };
-
-  //   useEffect(() => {
-  //     if (audioRef.current) {
-  //       const minutes = audioRef.current.duration / 60;
-  //       setAudioDuration(+minutes.toFixed(2) || 0);
-  //     }
-  //   }, []);
 
   useEffect(() => {
     if (play) {
@@ -47,10 +43,9 @@ export default function SingleRingtone() {
         <audio
           ref={audioRef}
           onTimeUpdate={handleAudioTimeUpdate}
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+          src={url}
         />
       </div>
-      {/* <div>{audioDuration}</div> */}
     </div>
   );
 }
