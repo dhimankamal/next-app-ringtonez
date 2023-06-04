@@ -6,7 +6,7 @@ const baseUrl = process.env.BACKEND_URL;
 
 const getPostData = async (page: number) => {
   try {
-    const res = await fetch(`${baseUrl}posts?per_page=10&page=${page}`, {
+    const res = await fetch(`${baseUrl}posts?per_page=20&page=${page}`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -24,21 +24,18 @@ export async function GET() {
     const currentDate = new Date().toISOString();
     const update = {
       postid: String(data.id),
-      date: currentDate,
       slug: data.slug,
       title: data.title.rendered,
       categories: data.categories,
       tags: data.tags,
-      url: data.fields.file,
-      downloads: 0,
+      url: data?.fields?.file || '',
     };
     await prisma.post.upsert({
-      where: { slug:data.slug || "" },
+      where: { slug: data.slug || "" },
       update: update,
-      create: update,
+      create: { ...update, date: currentDate, downloads: 0 },
     });
-    console.log(update
-    )
+    console.log(update);
   }
   return NextResponse.json({ posts });
 }

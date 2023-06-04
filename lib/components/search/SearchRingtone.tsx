@@ -47,14 +47,14 @@ export default function SearchRingtone() {
             />
           )}
           {!!result?.length && (
-            <div className="py-4 text-left grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            <div className="py-4 text-left grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
               {result.map(post => (
                 <RingtoneCard key={post.id} post={post} />
               ))}
             </div>
           )}
           {!result?.length && !loading && (
-            <div className="py-10 w-full text-sm">Ringtone not found</div>
+            <div className="py-10 w-full text-sm">Oops! The requested ringtone was not found. Please try another search.</div>
           )}
         </div>
       )}

@@ -12,8 +12,10 @@ export default function HeorSection() {
         </div>
 
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">
-          Here at Flowbite we focus on markets where technology, innovation, and
-          capital can unlock long-term value and drive economic growth.
+          🎶 Unlock the perfect melody! 📲 Download your favorite ringtones
+          today and let your phone sing with joy. 🎵 Customize your calls with a
+          wide variety of tunes that match your style. 🎧 Upgrade your sound
+          experience now!
         </p>
       </div>
     </section>
