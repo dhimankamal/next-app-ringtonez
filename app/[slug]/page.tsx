@@ -10,6 +10,7 @@ import { FaDownload } from "react-icons/fa";
 import { prisma } from "@/lib/db";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+
 import GroupRingtoneSkelton from "@lib/components/skelton/GroupRingtoneSkelton";
 
 type PageProps = { params: { slug: string } };

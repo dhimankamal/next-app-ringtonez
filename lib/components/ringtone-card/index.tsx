@@ -33,7 +33,7 @@ export default function RingtoneCard({ post }: RingtoneCardProps) {
       </button>
       <Link href={post.slug} className="cursor-pointer">
         <h3 className="text-md font-medium">{post?.title}</h3>
-        <p className="text-xs">{dayjs().from(post?.date) }</p>
+        <p className="text-xs">{dayjs().to(post?.date) }</p>
       </Link>
       <audio ref={audioRef} src={post?.url} />
     </div>
