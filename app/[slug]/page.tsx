@@ -2,20 +2,19 @@ import {
   FeaturedSection,
   TagComponent,
   SectionHeader,
-  CommonButton,
   SingleRingtone,
   TopDownloadSection,
 } from "@lib/components";
-import { FaDownload } from "react-icons/fa";
 import { prisma } from "@/lib/db";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 import GroupRingtoneSkelton from "@lib/components/skelton/GroupRingtoneSkelton";
+import DownloadBtton from "@lib/components/DownloadBtton";
 
 type PageProps = { params: { slug: string } };
 
-export const revalidate = 10;
+export const revalidate = 0;
 
 const getPost = async (slug: string) => {
   try {
@@ -31,9 +30,11 @@ const getPost = async (slug: string) => {
 
 export default async function Page({ params }: PageProps) {
   const post = await getPost(params.slug);
+
   if (!post) {
     notFound();
   }
+
   return (
     <div className="container mx-auto p-8 space-y-4">
       <section className="grid gap-4 grid-cols-5">
@@ -44,12 +45,7 @@ export default async function Page({ params }: PageProps) {
         <div className="border p-4 md:col-span-2 lg:col-span-1 rounded-md">
           <SectionHeader label="Download Now" />
           <div className="py-2">
-            <CommonButton variant="light">
-              <div className="flex flex-row gap-2 items-center justify-center">
-                <span>Download Mp3</span>
-                <FaDownload />
-              </div>
-            </CommonButton>
+            <DownloadBtton url={post.url} />
           </div>
         </div>
         <div className="border p-4 col-span-3 lg:col-span-1">

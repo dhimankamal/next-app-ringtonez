@@ -31,15 +31,14 @@ const getURL = async (url?: string) => {
   if (url) {
     const options = {
       resource_type: 'auto',
-      folder: 'rintone',
+      folder: 'ringtonez',
       use_filename: true,
       unique_filename: false,
-      overwrite: true,
+      overwrite: true
     };
     try {
       // Upload the ringtone
       const result = await cloudinary.uploader.upload(url, options);
-      console.log("result", result);
       return result.secure_url;
     } catch (error) {
       console.error(error);
@@ -52,9 +51,8 @@ export async function GET() {
   const posts: WordpressPostResponse[] = await getPostData(1);
   for (const data of posts) {
     const currentDate = new Date().toISOString();
-
     const url = await getURL(data?.fields?.file);
-    console.log("uploadurl", url);
+    console.log("uploadurl>>>>>>", url);
     const update = {
       postid: String(data.id),
       slug: data.slug,
