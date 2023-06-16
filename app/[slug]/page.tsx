@@ -45,7 +45,7 @@ export default async function Page({ params }: PageProps) {
         <div className="border p-4 md:col-span-2 lg:col-span-1 rounded-md">
           <SectionHeader label="Download Now" />
           <div className="py-2">
-            <DownloadBtton url={post.url} />
+            <DownloadBtton url={post.url} id={post.id} download={post.downloads} />
           </div>
         </div>
         <div className="border p-4 col-span-3 lg:col-span-1">

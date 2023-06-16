@@ -1,6 +1,6 @@
 import SearchRingtone from "../search/SearchRingtone";
 
-export default function HeorSection() {
+export default function HeroSection() {
   return (
     <section className="bg-white dark:bg-gray-900 pt-20 grid place-content-center">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">

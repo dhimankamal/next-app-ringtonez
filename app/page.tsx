@@ -1,6 +1,6 @@
 import {
   FeaturedSection,
-  HeorSection,
+  HeroSection,
   SectionHeader,
   TopDownloadSection,
 } from "@lib/components";
@@ -10,7 +10,7 @@ import { Suspense } from "react";
 export default async function Home() {
   return (
     <div className="space-y-8">
-      <HeorSection />
+      <HeroSection />
       <section className="container mx-auto border p-6 rounded-md">
         <SectionHeader label="Featured Ringtones" />
         <Suspense fallback={<GroupRingtoneSkelton number={10} />}>

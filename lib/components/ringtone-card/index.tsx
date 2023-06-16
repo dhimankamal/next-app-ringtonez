@@ -26,12 +26,12 @@ export default function RingtoneCard({ post }: RingtoneCardProps) {
   }, [play]);
 
   return (
-    <div className="border p-4 transition-all duration-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md flex items-center gap-4">
+    <div className="border px-4 transition-all duration-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md flex items-center gap-4">
       <button className="cursor-pointer" onClick={() => setPlay(!play)}>
         {!play && <FaPlay size={32} />}
         {play && <FaPause size={32} />}
       </button>
-      <Link href={post.slug} className="cursor-pointer">
+      <Link href={post.slug} className="cursor-pointer py-4 w-full">
         <h3 className="text-md font-medium">{post?.title}</h3>
         <p className="text-xs">{dayjs().to(post?.date) }</p>
       </Link>
