@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 import { WordpressPostResponse } from "./types";
 import { prisma } from "@/lib/db";
-const cloudinary = require("cloudinary").v2;
+import { v2 as cloudinary } from 'cloudinary'
+// const cloudinary = require("cloudinary").v2;
+
 
 const baseUrl = process.env.BACKEND_URL;
 
@@ -30,16 +32,16 @@ const getURL = async (url?: string) => {
   console.log("url+++++", url);
   if (url) {
     const options = {
-      resource_type: 'auto',
-      folder: 'ringtonez',
+      resource_type: "auto",
+      folder: "ringtonez",
       use_filename: true,
       unique_filename: false,
-      overwrite: true
+      overwrite: true,
     };
     try {
       // Upload the ringtone
-      const result = await cloudinary.uploader.upload(url, options);
-      return result.secure_url;
+      // const result = await cloudinary.uploader.upload(url, options);
+      // return result.secure_url;
     } catch (error) {
       console.error(error);
       return "";
@@ -61,11 +63,11 @@ export async function GET() {
       tags: data.tags,
       url,
     };
-    await prisma.post.upsert({
-      where: { slug: data.slug || "" },
-      update: update,
-      create: { ...update, date: currentDate, downloads: 0 },
-    });
+    // await prisma.post.upsert({
+    //   where: { slug: data.slug || "" },
+    //   update: update,
+    //   create: { ...update, date: currentDate, downloads: 0 },
+    // });
     console.log(update);
   }
   return NextResponse.json({ posts });

@@ -14,7 +14,7 @@ import DownloadBtton from "@lib/components/DownloadBtton";
 
 type PageProps = { params: { slug: string } };
 
-export const revalidate = 0;
+export const revalidate = 10;
 
 const getPost = async (slug: string) => {
   try {
@@ -27,6 +27,13 @@ const getPost = async (slug: string) => {
     throw error;
   }
 };
+
+export async function generateMetadata({ params }: PageProps) {
+  const post = await getPost(params.slug);
+  return {
+    title: `${post?.title} | Ringtonez`,
+  };
+}
 
 export default async function Page({ params }: PageProps) {
   const post = await getPost(params.slug);
@@ -45,7 +52,11 @@ export default async function Page({ params }: PageProps) {
         <div className="border p-4 md:col-span-2 lg:col-span-1 rounded-md">
           <SectionHeader label="Download Now" />
           <div className="py-2">
-            <DownloadBtton url={post.url} id={post.id} download={post.downloads} />
+            <DownloadBtton
+              url={post.url}
+              id={post.id}
+              download={post.downloads}
+            />
           </div>
         </div>
         <div className="border p-4 col-span-3 lg:col-span-1">

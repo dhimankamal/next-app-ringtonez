@@ -1,4 +1,6 @@
+"use client";
 import React, { FC } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface ProgressBarProps {
   percentage: number;
@@ -14,12 +16,15 @@ const ProgressBar: FC<ProgressBarProps> = ({ percentage, dark }) => {
   }`;
 
   return (
-    <div className={containerClasses}>
-      <div
-        className={progressBarClasses}
-        style={{ width: `${percentage}%` }}
-      ></div>
-    </div>
+    <AnimatePresence>
+      <div className={containerClasses}>
+        <motion.div
+          className={progressBarClasses}
+          initial={{ width: 0 }}
+          animate={{ width: `${percentage}%` }}
+        ></motion.div>
+      </div>
+    </AnimatePresence>
   );
 };
 

@@ -3,14 +3,14 @@ import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   const body = await request.json();
-
-  console.log("body>>>>>>>>>>>>>>>>>>", body);
-  const res = prisma.post.update({
-    where: { id: body.id },
-    data: { downloads: (body?.download || 0) + 1 },
+  const post = await prisma.post.findUnique({
+    where: {
+      id: body.id,
+    },
   });
-
-  console.log("res>>>>",res)
-
+  const res = await prisma.post.update({
+    where: { id: body.id },
+    data: { downloads: (post?.downloads || 0) + 1 },
+  });
   return NextResponse.json({ res });
 }

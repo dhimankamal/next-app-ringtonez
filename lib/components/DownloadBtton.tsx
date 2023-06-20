@@ -40,15 +40,14 @@ export default function DownloadBtton({
   download,
 }: DownloadBttonProps) {
   const handleClick = async () => {
-    // const status = await handleDownload(url);
-    // if (status) {
-    const data = { id, download };
-    await fetch(`/api/post/downloadcount`, {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
-
-    // }
+    const status = await handleDownload(url);
+    if (status) {
+      const data = { id, download };
+      await fetch(`/api/post/downloadcount`, {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+    }
   };
 
   return (

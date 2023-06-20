@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "../ui/svg-icon";
 
 const Navlinks = [
   {
@@ -18,9 +19,7 @@ export default function Navbar() {
     <nav className="backdrop-blur-xl bg-white/60  dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600 ">
       <div className="flex flex-wrap items-center justify-between mx-auto p-4 container">
         <Link href="/" className="flex items-center">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Ringtonez
-          </span>
+          <Logo className="w-8 fill-black" />
         </Link>
         <div className="flex">
           <button

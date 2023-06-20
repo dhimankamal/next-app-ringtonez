@@ -1,12 +1,16 @@
 import RingtoneCard from "../ringtone-card";
-import SectionHeader from "../ui/SectionHeader";
 import { prisma } from "@/lib/db";
 
-export const revalidate = 10;
+export const revalidate = 100;
 
 async function getPosts() {
   try {
-    return await prisma.post.findMany();
+    return await prisma.post.findMany({
+      take: 10,
+      orderBy: {
+        date: "desc",
+      },
+    });
   } catch (error) {
     throw error;
   }
