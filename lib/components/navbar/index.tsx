@@ -8,6 +8,11 @@ const Navlinks = [
     key: "home",
   },
   {
+    name: "Ringtones",
+    href: "/ringtones",
+    key: "ringtones",
+  },
+  {
     name: "About",
     href: "/about",
     key: "about",

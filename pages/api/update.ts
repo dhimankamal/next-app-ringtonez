@@ -56,25 +56,27 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const posts: WordpressPostResponse[] = await getPostData(1);
+  const posts: WordpressPostResponse[] = await getPostData(6);
   for (const data of posts) {
     const currentDate = new Date().toISOString();
     const url = await getURL(data?.fields?.file);
     console.log("uploadurl>>>>>>", url);
-    const update: any = {
-      postid: String(data.id),
-      slug: data.slug,
-      title: data.title.rendered,
-      categories: data.categories,
-      tags: data.tags,
-      url,
-    };
-    await prisma.post.upsert({
-      where: { slug: data.slug || "" },
-      update: update,
-      create: { ...update, date: currentDate, downloads: 0 },
-    });
-    console.log(update);
+    if (url) {
+      const update: any = {
+        postid: String(data.id),
+        slug: data.slug,
+        title: data.title.rendered,
+        categories: data.categories,
+        tags: data.tags,
+        url,
+      };
+      await prisma.post.upsert({
+        where: { slug: data.slug || "" },
+        update: update,
+        create: { ...update, date: currentDate, downloads: 0 },
+      });
+      console.log(update);
+    }
   }
   res.status(200).json({ name: "Kamal" });
 }
