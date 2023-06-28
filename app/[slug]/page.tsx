@@ -45,7 +45,7 @@ export default async function Page({ params }: PageProps) {
   return (
     <div className="container mx-auto p-8 space-y-4">
       <section className="grid gap-4 grid-cols-5">
-        <div className="border p-4 col-span-5 lg:col-span-3 rounded-md">
+        <div className="border p-4 col-span-5 lg:col-span-4 rounded-md">
           <SectionHeader label={`${post.title} | Ringtonez`} />
           <SingleRingtone url={post.url} />
         </div>
@@ -59,18 +59,20 @@ export default async function Page({ params }: PageProps) {
             />
           </div>
         </div>
+      </section>
+      <section>
         <div className="border p-4 col-span-3 lg:col-span-1">
           <SectionHeader label="Tags" />
           <TagComponent
             tags={[
-              "Kamal",
-              "test",
-              "Kamal",
-              "test",
-              "Kamal",
-              "test",
-              "Kamal",
-              "test",
+              "ringtone",
+              "freeringtone",
+              "ringtonedownload",
+              "newringtone",
+              "latestringtones",
+              "popularringtones",
+              "mp3ringtone",
+              "aacringtone",
             ]}
           />
         </div>

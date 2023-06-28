@@ -49,7 +49,7 @@ export default function RingtoneCard({ post }: RingtoneCardProps) {
         )}
       </button>
       <Link
-        href={post.slug}
+        href={`/${post.slug}`}
         className="cursor-pointer py-2 w-full flex justify-between items-center"
       >
         <div>
