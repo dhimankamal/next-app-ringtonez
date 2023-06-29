@@ -14,7 +14,7 @@ import DownloadBtton from "@lib/components/DownloadBtton";
 
 type PageProps = { params: { slug: string } };
 
-export const revalidate = 10;
+export const revalidate = 100;
 
 const getPost = async (slug: string) => {
   try {
