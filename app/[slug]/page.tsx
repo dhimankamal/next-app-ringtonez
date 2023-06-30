@@ -10,7 +10,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 import GroupRingtoneSkelton from "@lib/components/skelton/GroupRingtoneSkelton";
-import DownloadBtton from "@lib/components/DownloadBtton";
+import DownloadBtton from "@lib/components/DownloadButton";
 
 type PageProps = { params: { slug: string } };
 

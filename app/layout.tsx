@@ -2,6 +2,7 @@ import { TailwindIndicator } from "@lib/components/TailwindIndicatior";
 import "./globals.css";
 import { Footer,Navbar } from "@lib/components";
 import { Metadata } from 'next'
+
  
 
 export const metadata:Metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="w-full">
+     
         <Navbar />
         <main className="pt-20">{children}</main>
         <Footer />
