@@ -43,13 +43,13 @@ export default async function Page({ params }: PageProps) {
   }
 
   return (
-    <div className="container mx-auto p-8 space-y-4">
+    <div className="container mx-auto p-4 md:p-8 space-y-4">
       <section className="grid gap-4 grid-cols-5">
         <div className="border p-4 col-span-5 lg:col-span-4 rounded-md">
           <SectionHeader label={`${post.title} | Ringtonez`} />
           <SingleRingtone url={post.url} />
         </div>
-        <div className="border p-4 md:col-span-2 lg:col-span-1 rounded-md">
+        <div className="border p-4 col-span-5 lg:col-span-1 rounded-md">
           <SectionHeader label="Download Now" />
           <div className="py-2">
             <DownloadBtton

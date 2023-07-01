@@ -9,9 +9,9 @@ import { Suspense } from "react";
 
 export default async function Home() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 p-2">
       <HeroSection />
-      <section className="container mx-auto border p-6 rounded-md">
+      <section className="container mx-auto border p-4 md:p-6 rounded-md">
         <SectionHeader label="Featured Ringtones" />
         <Suspense fallback={<GroupRingtoneSkelton number={10} />}>
           {/* @ts-expect-error Async Server Component */}
@@ -19,7 +19,7 @@ export default async function Home() {
         </Suspense>
       </section>
 
-      <section className="container mx-auto border p-6 rounded-md">
+      <section className="container mx-auto border p-4 md:p-6 rounded-md">
         <SectionHeader label="Top Download" />
         <Suspense fallback={<GroupRingtoneSkelton number={5} />}>
           {/* @ts-expect-error Async Server Component */}
