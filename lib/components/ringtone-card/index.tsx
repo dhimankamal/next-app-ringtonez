@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { FaPlay, FaPause, FaDownload } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useOutsideClick } from "@lib/hooks";
 
 dayjs.extend(relativeTime);
 
@@ -16,7 +17,10 @@ type RingtoneCardProps = {
 
 export default function RingtoneCard({ post }: RingtoneCardProps) {
   const [play, setPlay] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  useOutsideClick(buttonRef, () => setPlay(false));
 
   useEffect(() => {
     if (play) {
@@ -28,7 +32,11 @@ export default function RingtoneCard({ post }: RingtoneCardProps) {
 
   return (
     <motion.div className="border px-4 transition-all duration-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md flex items-center gap-4">
-      <button className="cursor-pointer" onClick={() => setPlay(!play)}>
+      <button
+        ref={buttonRef}
+        className="cursor-pointer"
+        onClick={() => setPlay(!play)}
+      >
         {!play && (
           <motion.div
             initial={{ opacity: 0, rotate: 90 }}

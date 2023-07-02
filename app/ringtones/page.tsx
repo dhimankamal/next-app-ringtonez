@@ -18,12 +18,10 @@ async function getPosts() {
 export default async function RingtonePage() {
   const posts = await getPosts();
   return (
-   
-      <div className="py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-        {posts.map(post => (
-          <RingtoneCard key={post.id} post={post} />
-        ))}
-      </div>
-   
+    <div className="py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+      {posts.map(post => (
+        <RingtoneCard key={post.id} post={post} />
+      ))}
+    </div>
   );
 }
