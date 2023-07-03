@@ -27,6 +27,7 @@
     "flowbite-react": "^0.4.9",
     "framer-motion": "^10.12.17",
     "next": "^13.4.7",
+    "nextjs-google-analytics": "^2.3.3",
     "nodemailer": "^6.9.3",
     "postcss": "8.4.23",
     "react": "18.2.0",
