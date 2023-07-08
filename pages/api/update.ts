@@ -57,7 +57,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   let finalRes:any[] = []
-  const posts: WordpressPostResponse[] = await getPostData(16);
+  const posts: WordpressPostResponse[] = await getPostData(35);
   for (const data of posts) {
     const currentDate = new Date().toISOString();
     const url = await getURL(data?.fields?.file);
