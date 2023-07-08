@@ -14,7 +14,7 @@ cloudinary.config({
 });
 
 type Data = {
-  name: string;
+  finalRes: any[];
 };
 
 const getPostData = async (page: number) => {
@@ -56,7 +56,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const posts: WordpressPostResponse[] = await getPostData(6);
+  let finalRes:any[] = []
+  const posts: WordpressPostResponse[] = await getPostData(16);
   for (const data of posts) {
     const currentDate = new Date().toISOString();
     const url = await getURL(data?.fields?.file);
@@ -70,13 +71,14 @@ export default async function handler(
         tags: data.tags,
         url,
       };
-      await prisma.post.upsert({
+      const res =  await prisma.post.upsert({
         where: { slug: data.slug || "" },
         update: update,
         create: { ...update, date: currentDate, downloads: 0 },
       });
-      console.log(update);
+      finalRes.push(res)
+      console.log("res>>>>>",res);
     }
   }
-  res.status(200).json({ name: "Kamal" });
+  res.status(200).json({ finalRes });
 }
