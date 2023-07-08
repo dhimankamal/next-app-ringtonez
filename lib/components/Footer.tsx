@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-white dark:bg-gray-900 mt-8">
       <div className="w-full container mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center justify-between">
-          <a href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0">
+          <a href="/" className="flex items-center mb-4 sm:mb-0">
         
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Ringtonez</span>
           </a>

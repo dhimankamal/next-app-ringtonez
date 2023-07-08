@@ -9,7 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           { name: "Ringtones", href: "/ringtones" },
         ]}
       />
-      <div className="">{children}</div>;
+      <div className="">{children}</div>
     </div>
   );
 }
