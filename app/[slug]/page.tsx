@@ -14,7 +14,7 @@ import DownloadBtton from "@lib/components/DownloadButton";
 
 type PageProps = { params: { slug: string } };
 
-export const revalidate = 100;
+export const revalidate = 1000;
 
 const getPost = async (slug: string) => {
   try {
@@ -31,7 +31,8 @@ const getPost = async (slug: string) => {
 export async function generateMetadata({ params }: PageProps) {
   const post = await getPost(params.slug);
   return {
-    title: `${post?.title} | Ringtonez`,
+    title: `Download Free ${post?.title} Ringtones | Ringtonez`,
+    description: `Discover and download the best collection of free ${post?.title} ringtones at Ringtonez. Personalize your phone with the perfect melody that suits your style. Enjoy high-quality MP3 ringtones and enhance your mobile experience. Get your favorite ${post?.title} ringtone today!`,
   };
 }
 
@@ -46,7 +47,9 @@ export default async function Page({ params }: PageProps) {
     <div className="container mx-auto p-4 md:p-8 space-y-4">
       <section className="grid gap-4 grid-cols-5">
         <div className="border p-4 col-span-5 lg:col-span-4 rounded-md">
-          <SectionHeader label={`${post.title} | Ringtonez`} />
+          <SectionHeader
+            label={`Download Free ${post?.title} Ringtones | Ringtonez`}
+          />
           <SingleRingtone url={post.url} />
         </div>
         <div className="border p-4 col-span-5 lg:col-span-1 rounded-md">
